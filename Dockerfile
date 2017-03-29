@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
       && docker-php-ext-install -j$(nproc) gd
 
 RUN a2enmod substitute
+RUN a2enmod rewrite
 
 # Set LOG Directories
 RUN mkdir /var/log/export && chgrp adm /var/log/export
